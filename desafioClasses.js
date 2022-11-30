@@ -15,19 +15,37 @@ class ProductManager {
     }
   }
 
-  addProduct() {
+  updateProduct(id) {
+    this.Products.map((element, i) => {
+      if (element.id === id) {
+        element.title = "Producto en SALE";
+        return element;
+      }
+    });
+  }
 
+  deleteProduct(id) {
+    console.log("Productos antes de eliminar:", this.Products);
+    const objdIndex = this.Products.findIndex((element) => element.id === id);
+    if (this.Products.find((evento) => evento.id === id)) {
+      this.Products.splice(objdIndex, 1);
+    } else {
+      console.log("no existe el producto");
+    }
+  }
+
+  addProduct() {
     let newProduct = {
       id: randomCode,
-      title: "producto de prueba",
-      description: "este es un producto de prueba",
+      title: "Producto de prueba",
+      description: "Este es un producto de prueba",
       price: 200,
-      thumbnail: "sin imagen",
+      thumbnail: "Sin imagen",
       code: "abc123",
       stock: 25,
     };
     if (this.Products.find((evento) => evento.code === newProduct.code)) {
-      console.log("producto con codigo ya agregado");
+      console.log("Producto con codigo ya agregado");
     } else {
       randomCode++;
       this.Products.push(newProduct);
@@ -63,7 +81,7 @@ const ProductManager3 = new ProductManager();
 ProductManager3.addProduct();
 ProductManager3.addProduct();
 //Muestra los productos
-console.log("Producto duplicado:",ProductManager3.getProducts());
+console.log("Producto duplicado:", ProductManager3.getProducts());
 
 console.log("---------------------------------------------------");
 
@@ -72,7 +90,27 @@ console.log("---------------------------------------------------");
 const ProductManager4 = new ProductManager();
 ProductManager4.addProduct();
 //Encuentra el producto
-console.log("Se encontro el siguiente producto:",ProductManager4.getProductById(2));
+console.log(
+  "Se encontro el siguiente producto:",
+  ProductManager4.getProductById(2)
+);
 //No encuentra el producto
 console.log(ProductManager4.getProductById(3));
+
+console.log("---------------------------------------------------");
+
+//!Updatear Producto
+const ProductManager5 = new ProductManager();
+ProductManager5.addProduct();
+ProductManager5.updateProduct(3);
+console.log(
+  "Se actualizo el siguiente producto:",
+  ProductManager5.getProducts()
+);
+
+console.log("---------------------------------------------------");
+
+//!Updatear Producto
+ProductManager5.deleteProduct(3);
+console.log("Productos luego de eliminar:", ProductManager5.getProducts());
 console.log("---------------------------------------------------");
