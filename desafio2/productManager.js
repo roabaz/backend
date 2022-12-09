@@ -9,7 +9,7 @@ class ProductManager {
   fileExists() {
     return fs.existsSync(this.file);
   }
-  addUser(user) {
+  addProduct(product) {
     return new Promise((resolve, reject) => {
       if (this.fileExists()) {
         console.log("El archivo existe");
@@ -18,7 +18,7 @@ class ProductManager {
             return console.log("Error al leer el archivo");
           }
           this.products = JSON.parse(data);
-          this.products.push(user);
+          this.products.push(product);
           fs.writeFile(
             "./products.json",
             JSON.stringify(this.products),
@@ -31,7 +31,7 @@ class ProductManager {
           );
         });
       } else {
-        this.products.push(user);
+        this.products.push(product);
         fs.writeFileSync(this.file, JSON.stringify(this.products), "utf8");
         resolve();
       }
@@ -44,8 +44,8 @@ class ProductManager {
           reject(err);
         }
         this.products = JSON.parse(data);
-        const user = this.products.find((user) => user.id === id);
-        resolve(user);
+        const product = this.products.find((product) => product.id === id);
+        resolve(product);
       });
     });
   }
@@ -68,7 +68,7 @@ class ProductManager {
           reject(err);
         }
         this.products = JSON.parse(data);
-        this.products = this.products.filter((user) => user.id !== id);
+        this.products = this.products.filter((product) => product.id !== id);
         fs.writeFile(
           "./products.json",
           JSON.stringify(this.products),

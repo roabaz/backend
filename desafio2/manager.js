@@ -26,8 +26,8 @@ const product2 = {
 const productManager = new ProductManager([], "users.json");
 
 const runAwait = async () => {
-  await productManager.addUser(product);
-  await productManager.addUser(product2);
+  await productManager.addProduct(product);
+  await productManager.addProduct(product2);
 
   console.log("===============================================");
 
