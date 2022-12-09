@@ -18,7 +18,7 @@ class ProductManager {
   updateProduct(id) {
     this.Products.map((element, i) => {
       if (element.id === id) {
-        element.title = "Producto en SALE";
+        element.name = "Producto en SALE";
         return element;
       }
     });
@@ -110,7 +110,7 @@ console.log(
 
 console.log("---------------------------------------------------");
 
-//!Updatear Producto
+//!Eliminar Producto
 ProductManager5.deleteProduct(3);
 console.log("Productos luego de eliminar:", ProductManager5.getProducts());
 console.log("---------------------------------------------------");
