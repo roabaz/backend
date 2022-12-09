@@ -1,12 +1,8 @@
 const ProductManager = require("./productManager");
 
-
+const uid = (() => (id = 1, () => id++))();
 const product = {
-  /*
-  id: Math.floor(Math.random() * 100),
-  */
-
-  id: 1,
+  id: uid(),
   title: "Producto de prueba",
   description: "Este es un producto de prueba",
   price: 200,
@@ -15,7 +11,7 @@ const product = {
   stock: 25,
 };
 const product2 = {
-  id: 2,
+  id: uid(),
   title: "Producto 2",
   description: "Este es un producto 2",
   price: 200,
