@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/roabaz/backend/issues"
   },
-  "homepage": "https://github.com/roabaz/backend#readme"
+  "homepage": "https://github.com/roabaz/backend#readme",
+  "dependencies": {
+    "nodemodule": "^0.3.0"
+  }
 }
