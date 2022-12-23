@@ -1,0 +1,110 @@
+[
+	{
+		"id": 1,
+		"title": "CODERHOUSE NAME!!!!",
+		"description": "Este es un producto 2",
+		"price": 200,
+		"thumbnail": "Sin imagen 2",
+		"code": "123edfe",
+		"stock": 25
+	},
+	{
+		"id": 2,
+		"title": "CODERHOUSE NAME!!!!",
+		"description": "Este es un producto 2",
+		"price": 200,
+		"thumbnail": "Sin imagen 2",
+		"code": "123edfe",
+		"stock": 25
+	},
+	{
+		"id": 3,
+		"title": "CODERHOUSE NAME!!!!",
+		"description": "Este es un producto 2",
+		"price": 200,
+		"thumbnail": "Sin imagen 2",
+		"code": "123edfe",
+		"stock": 25
+	},
+	{
+		"id": 4,
+		"title": "CODERHOUSE NAME!!!!",
+		"description": "Este es un producto 2",
+		"price": 200,
+		"thumbnail": "Sin imagen 2",
+		"code": "123edfe",
+		"stock": 25
+	},
+	{
+		"id": 5,
+		"title": "CODERHOUSE NAME!!!!",
+		"description": "Este es un producto 2",
+		"price": 200,
+		"thumbnail": "Sin imagen 2",
+		"code": "123edfe",
+		"stock": 25
+	},
+	{
+		"id": 6,
+		"title": "CODERHOUSE NAME!!!!",
+		"description": "Este es un producto 2",
+		"price": 200,
+		"thumbnail": "Sin imagen 2",
+		"code": "123edfe",
+		"stock": 25
+	},
+	{
+		"id": 7,
+		"title": "CODERHOUSE NAME!!!!",
+		"description": "Este es un producto 2",
+		"price": 200,
+		"thumbnail": "Sin imagen 2",
+		"code": "123edfe",
+		"stock": 25
+	},
+	{
+		"id": 8,
+		"title": "CODERHOUSE NAME!!!!",
+		"description": "Este es un producto 2",
+		"price": 200,
+		"thumbnail": "Sin imagen 2",
+		"code": "123edfe",
+		"stock": 25
+	},
+	{
+		"id": 9,
+		"title": "CODERHOUSE NAME!!!!",
+		"description": "Este es un producto 2",
+		"price": 200,
+		"thumbnail": "Sin imagen 2",
+		"code": "123edfe",
+		"stock": 25
+	},
+	{
+		"id": 10,
+		"title": "CODERHOUSE NAME!!!!",
+		"description": "Este es un producto 2",
+		"price": 200,
+		"thumbnail": "Sin imagen 2",
+		"code": "123edfe",
+		"stock": 25
+	},
+	{
+		"title": "holaaa NAME!!!!",
+		"description": "Este es un producto 2",
+		"price": 200,
+		"thumbnail": "Sin imagen 2",
+		"code": "123edfe",
+		"stock": 25,
+		"id": 11
+	},
+	{
+		"title": "holaaa NAME!!!!",
+		"description": "Este es un producto 3",
+		"price": 300,
+		"thumbnail": "Sin imagen 3",
+		"code": "1233e",
+		"stock": 3,
+		"id": 12
+	}
+]
