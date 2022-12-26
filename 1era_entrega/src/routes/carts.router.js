@@ -46,21 +46,13 @@ router.post("/:cid/product/:pid", (req, res) => {
   } else {
     res.status(404).json({ error: "cart no encontrado" });
   }
-/*   console.log(cart.products);
- */
   var product = products.find(function (u) {
     return u.id === parseInt(req.params.pid);
   });
-/*   console.log(product);
- */
-  
+
   let quantity = 1;
 
   cartManager.creatProduct(req.params.cid, product, quantity);
-  res.send({
-    status: "ok",
-    message: "carrito agregado",
-  });
 });
 
 export default router;

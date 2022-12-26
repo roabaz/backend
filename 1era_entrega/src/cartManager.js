@@ -24,20 +24,13 @@ class CartManager {
   }
 
   async creatProduct(cartId, product, quantity) {
-    /*   console.log(cartId);
-    console.log(product);
-    console.log(quantity); */
-
     var cart = this.carts.find(function (cart) {
       return cart.id === parseInt(cartId);
     });
-    /*     console.log(cart);
-     */
 
-    var productoExistente = cart.products.find(function(producto) {
-      return producto.id = product.id;
+    var productoExistente = cart.products.find(function (producto) {
+      return (producto.id = product.id);
     });
-
 
     if (productoExistente) {
       productoExistente.quantity++;
