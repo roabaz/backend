@@ -25,6 +25,16 @@ class CartManager {
     }
   }
 
+
+  async creatProduct(cartId, product, quantity) {
+    const cart = this.carts.find((cart) => cart.id === cartId);
+      cart.products.push({
+        id: product.id,
+        quantity: quantity
+      });
+      return cart;
+  }
+
   async getCartById(id) {
     try {
       const data = await this.readFile();
@@ -73,3 +83,5 @@ class CartManager {
 }
 
 export default CartManager;
+
+

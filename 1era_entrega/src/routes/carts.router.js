@@ -55,19 +55,35 @@ router.post("/:cid/product/:pid", (req, res) => {
     res.status(404).json({ error: "producto no encontrado" });
   }
   console.log(product);
-  product.id = product.id;
+
   product.id = product.id;
 if (product.quantity === 1) {
   product.quantity++;
 } else {
   product.quantity = 1;
 }
-  cart.products.push(product);
-  cartManager.creatCart(product);
-  res.send({
+  cartManager.creatProduct(req.params.cid,product, quantity);
+   res.send({
     status: "ok",
     message: "carrito agregado",
   });
 });
 
 export default router;
+
+
+
+
+router.post("/", (req, res) => {
+  const cart = {};
+  let products = [];
+  const maxId = carts.reduce((max, cart) => (cart.id > max ? cart.id : max), 0);
+  cart.id = maxId + 1;
+  cart.products = products;
+  carts.push(cart);
+  cartManager.creatCart(cart);
+  res.send({
+    status: "ok",
+    message: "carrito agregado",
+  });
+});
