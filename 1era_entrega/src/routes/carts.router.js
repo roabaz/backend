@@ -53,6 +53,7 @@ router.post("/:cid/product/:pid", (req, res) => {
   });
 /*   console.log(product);
  */
+  
   let quantity = 1;
 
   cartManager.creatProduct(req.params.cid, product, quantity);
