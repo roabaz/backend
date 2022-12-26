@@ -46,44 +46,20 @@ router.post("/:cid/product/:pid", (req, res) => {
   } else {
     res.status(404).json({ error: "cart no encontrado" });
   }
-  console.log(cart.products);
-  
-  const product = products.find((u) => u.id === parseInt(req.params.pid));
-  if (product) {
-    res.json(product);
-  } else {
-    res.status(404).json({ error: "producto no encontrado" });
-  }
-  console.log(product);
+/*   console.log(cart.products);
+ */
+  var product = products.find(function (u) {
+    return u.id === parseInt(req.params.pid);
+  });
+/*   console.log(product);
+ */
+  let quantity = 1;
 
-  product.id = product.id;
-if (product.quantity === 1) {
-  product.quantity++;
-} else {
-  product.quantity = 1;
-}
-  cartManager.creatProduct(req.params.cid,product, quantity);
-   res.send({
+  cartManager.creatProduct(req.params.cid, product, quantity);
+  res.send({
     status: "ok",
     message: "carrito agregado",
   });
 });
 
 export default router;
-
-
-
-
-router.post("/", (req, res) => {
-  const cart = {};
-  let products = [];
-  const maxId = carts.reduce((max, cart) => (cart.id > max ? cart.id : max), 0);
-  cart.id = maxId + 1;
-  cart.products = products;
-  carts.push(cart);
-  cartManager.creatCart(cart);
-  res.send({
-    status: "ok",
-    message: "carrito agregado",
-  });
-});

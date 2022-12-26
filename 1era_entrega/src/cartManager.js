@@ -12,10 +12,8 @@ class CartManager {
         this.carts = JSON.parse(data);
       }
       cart.id = this.carts.length
-        ? this.carts.reduce(
-            (max, cart) => (cart.id > max ? cart.id : max),
-            0
-          ) + 1
+        ? this.carts.reduce((max, cart) => (cart.id > max ? cart.id : max), 0) +
+          1
         : 1;
       this.carts.push(cart);
 
@@ -25,14 +23,21 @@ class CartManager {
     }
   }
 
-
   async creatProduct(cartId, product, quantity) {
-    const cart = this.carts.find((cart) => cart.id === cartId);
-      cart.products.push({
-        id: product.id,
-        quantity: quantity
-      });
-      return cart;
+    console.log(cartId);
+    console.log(product);
+    console.log(quantity);
+
+    var cart = this.carts.find(function (cart) {
+      return cart.id === parseInt(cartId) ;
+    });
+    console.log(cart);
+
+    cart.products.push({
+      id: product.id,
+      quantity: quantity,
+    });
+    await this.writeFile(this.carts);
   }
 
   async getCartById(id) {
@@ -55,7 +60,6 @@ class CartManager {
       throw err;
     }
   }
-
 
   //resolve error ENOENT: no such file or directory, open 'carts.json'
   async readFile() {
@@ -83,5 +87,3 @@ class CartManager {
 }
 
 export default CartManager;
-
-
