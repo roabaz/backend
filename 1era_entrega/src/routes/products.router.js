@@ -61,11 +61,13 @@ router.put("/:id", (req, res) => {
   product.code = newProduct.code;
   product.stock = newProduct.stock;
 
-  const index = products.indexOf((product) => product.id === parseInt(id));
+  const index = products.indexOf((product) => product.id = parseInt(id));
   products[index] = product;
-  productManager.updateProduct(id, products[index]);
-  /*   console.log(products[index]);
-   */
+  productManager.updateProduct(id, product);
+     console.log(id);
+     console.log(index);
+     console.log(product);
+  
   res.send({
     status: "ok",
     message: "Producto actualizado",
