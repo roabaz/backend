@@ -9,7 +9,6 @@ router.use(express.static("public"));
 const cartManager = new CartManager(
   path.resolve(process.cwd(), "public", "carts.json")
 );
-router.use(express.static("public"));
 const productManager = new ProductManager(
   path.resolve(process.cwd(), "public", "products.json")
 );

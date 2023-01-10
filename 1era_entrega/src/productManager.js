@@ -48,16 +48,17 @@ class ProductManager {
 
   async updateProduct(id, product) {
     try {
-      const products = await this.getAll();
+      const data = await this.readFile();
+      this.products = JSON.parse(data);
 
-      const index = products.findIndex((product) => product.id === id);
+      const index = this.products.findIndex((product) => product.id === id);
       if (index === -1) {
         throw new Error("Producto no encontrado");
       }
 
-      products[index] = { ...products[index], ...product };
+      this.products[index] = { ...this.products[index], ...product };
 
-      await this.writeFile(products);
+      await this.writeFile(this.products[index]);
     } catch (err) {
       throw err;
     }
