@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.send("Hello World! go to chat <a href='http://localhost:3000/views'>http://localhost:3000/views</a>");
+  res.send("Hello World! go to chat <a href='http://localhost:3001/views'>http://localhost:3001/views</a>");
 });
 app.use("/products", productRouter);
 app.use("/carts", cartRouter);
