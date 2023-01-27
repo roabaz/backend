@@ -1,7 +1,5 @@
 import { Router } from "express";
-import { v4 } from "uuid";
 import FileManager from "../data/classes/DBManager.js";
-import path from "path";
 
 const cartRouter = Router();
 const cartFileManager = new FileManager.CartFileManager();

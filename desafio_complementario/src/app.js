@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import { Server } from "socket.io";
 import { engine } from "express-handlebars";
-import viewsRoute from "./routes/views.router.js";
+import viewsRoute from "./routes/chat.router.js";
 import productRouter from "./routes/product.router.js";
 import cartRouter from "./routes/cart.router.js";
 const PORT = 3001;
@@ -18,7 +18,7 @@ app.use("/products", productRouter);
 app.use("/carts", cartRouter);
 
 const httpServer = app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port http://localhost:${PORT}`);
   console.log("iniciado con socket.io");
 });
 
@@ -59,7 +59,7 @@ socketServer.on("connection", (socket) => {
 
 
 mongoose.connect(
-  "mongodb+srv://coderhouse:coder123@cluster0.pnpufdn.mongodb.net/ecommerce?retryWrites=true&w=majority",
+  "mongodb+srv://robazter:coder123@ecommerce.agaextg.mongodb.net/ecommerce?retryWrites=true&w=majority",
   (error) => {
     if (error) {
       console.log("Error de conexion");

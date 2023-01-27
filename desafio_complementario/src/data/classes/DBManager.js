@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { productModel } from "../../models/product.model.js";
 import { cartModel } from "../../models/cart.model.js";
-
+import { chatModel } from "../../models/chat.model.js";
 class ProductFileManager {
   async read() {
     try {
@@ -144,4 +144,30 @@ class CartFileManager {
 }
 
 
-export default { ProductFileManager, CartFileManager };
+
+class MessageFileManager{
+    async read(){
+        try{
+            const messages = await chatModel.find();
+            return messages;
+        }
+        catch(err){
+            throw err;
+        }
+    }
+
+    async create(message){
+        try{
+            const newMessage = new chatModel(message);
+            await newMessage.save();
+            return message;
+        }
+        catch(err){
+            throw err;
+        }
+
+    }
+  }
+
+
+export default { ProductFileManager, CartFileManager, MessageFileManager };
