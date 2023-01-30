@@ -15,4 +15,15 @@ try {
 }
 });
 
+
+router.post("/", (req, res) => {
+try {
+  const chat = req.body;
+  const newChat = chatFileManager.create(chat);
+  res.status(201).json(newChat);
+} catch (err) {
+  res.status(500).send(err.message);
+}
+});
+
 export default router;

@@ -5,6 +5,9 @@ import { engine } from "express-handlebars";
 import viewsRoute from "./routes/chat.router.js";
 import productRouter from "./routes/product.router.js";
 import cartRouter from "./routes/cart.router.js";
+import { chatModel } from "./models/chat.model.js";
+
+
 const PORT = 3001;
 const app = express();
 const messages = [];
@@ -54,6 +57,7 @@ socketServer.on("connection", (socket) => {
   socket.on("message", (data) => {
     messages.push(data);
     socketServer.emit("messageLogs", messages);
+    chatModel.create(data);
   });
 });
 

@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import { productModel } from "../../models/product.model.js";
 import { cartModel } from "../../models/cart.model.js";
 import { chatModel } from "../../models/chat.model.js";
@@ -156,11 +155,11 @@ class MessageFileManager{
         }
     }
 
-    async create(message){
+    async create(messages){
         try{
-            const newMessage = new chatModel(message);
+            const newMessage = new chatModel(messages);
             await newMessage.save();
-            return message;
+            return messages;
         }
         catch(err){
             throw err;
