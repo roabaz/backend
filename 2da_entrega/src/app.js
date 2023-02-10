@@ -73,3 +73,5 @@ mongoose.connect(
     }
   }
 );
+app.use('/api/products', productRouter)
+app.use('/api/carts', cartRouter)
