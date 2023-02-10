@@ -12,5 +12,5 @@ const userSchema = new mongoose.Schema({
   category: String,
   status: Boolean,
 });
-
+productSchema.plugin(mongoosePaginate)
 export const productModel = mongoose.model(useCollection, userSchema);
